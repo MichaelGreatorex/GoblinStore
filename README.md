@@ -28,3 +28,7 @@ This is a simple but responsive page outlining some information about the compan
 Locations:
 
 This pages details the store locations and some contact information.
+
+New Products:
+
+This page links to rawg.io games API, and displays live data from the site relating to upcoming releases. Data relating to each game is stored on individual cards which are responsive in their layout according to different screen sizes.

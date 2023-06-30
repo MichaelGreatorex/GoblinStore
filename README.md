@@ -11,6 +11,8 @@ The user will be taken to the checkout page via the "proceed to checkout button"
 
 The cart runs off scripts which calculate the number of items in the cart and the subtotal. The number of items can be changed either by clicking "add to cart" or else by clicking the + and - buttons in the cart directly.
 
+All product information is stored within the products.js script. This includes the number of each product in stock. Items exceeding this number may not be added to the cart, as the number decreases for each instance of the product being added to the cart.
+
 When hovering over a cart item picture, it will highlight in red. If clicked it will be removed from the cart and localStorage, and the subtotal will readjust. The same applies to the checkout page.
 
 The form contains bootstrap validation which prevents the user placing an order without filling it in correctly. Once validation has been satisfied, and the user clicks "Place Order" an email will be sent to the email address the user has put in the email field of the form, from "goblinstore@gmx.com" confirming the order. The email will contain the details from the form. The email API used is SMTPS.js.
@@ -31,4 +33,4 @@ This pages details the store locations and some contact information.
 
 New Products:
 
-This page links to rawg.io games API, and displays live data from the site relating to upcoming releases. Data relating to each game is stored on individual cards which are responsive in their layout according to different screen sizes.
+This page links to rawg.io games API, and displays live data from the site relating to upcoming releases. Data relating to each game is stored on individual cards which are responsive in their layout according to different screen sizes. Each card features the commercial image of the game, its title, its genre, its estimated release date and a screenshot showing real game play. Please note, this page is for information only and items cannot be added to the cart for purchase.

@@ -13,4 +13,18 @@ The cart runs off scripts which calculate the number of items in the cart and th
 
 When hovering over a cart item picture, it will highlight in red. If clicked it will be removed from the cart and localStorage, and the subtotal will readjust. The same applies to the checkout page.
 
-The form contains bootstrap validation which prevents the user placing an order 
+The form contains bootstrap validation which prevents the user placing an order without filling it in correctly. Once validation has been satisfied, and the user clicks "Place Order" an email will be sent to the email address the user has put in the email field of the form, from "goblinstore@gmx.com" confirming the order. The email will contain the details from the form. The email API used is SMTPS.js.
+
+Additionally, when "Place Order" is clicked, the details from the form will all be compiled into a new entry into Google Firebase realtime database.
+
+Alerts will be shown confirming that the email has been sent and the order has been recieved. The user will need to acknowlege each by clicking "ok" when prompted.
+
+There are some further pages in this web app:
+
+About:
+
+This is a simple but responsive page outlining some information about the company. It also contains a link to the the shop in addtion to the links in the nav bar and footer.
+
+Locations:
+
+This pages details the store locations and some contact information.

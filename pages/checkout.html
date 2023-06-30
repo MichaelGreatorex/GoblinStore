@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href="https://fonts.googleapis.com/css?family=Blaka+Hollow&effect=fire-animation" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nabla|Kolker+Brush|Blaka" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/0dad82cffc.js" crossorigin="anonymous"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Checkout</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" 
+                integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link rel="stylesheet" href="/styles/styles.css">
+    <link rel="stylesheet" href="/styles/shopping.css">
+
+
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar__container">
+            <a href="/pages/index.html" id="navbar__logo" class="font-effect-fire-animation"><i class="fa-solid fa-viruses"></i>Goblinstore</a>
+            <div class="navbar__toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+
+            </div>
+            
+
+            <i class="bx bx-shopping-bag" id="cart-icon1">🛒<div class="total-items-in-cart"></div></i>
+            <ul class="navbar__menu">
+                <li class="navbar__item">
+                    <a href="/pages/index.html" class="navbar__links">Home</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="/pages/about.html" class="navbar__links">About</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="/pages/new_products.html" class="navbar__links">New</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="/pages/storepage.html" class="navbar__links">Shop</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="/pages/locations.html" class="navbar__links">Locations</a>
+                </li>
+
+            </ul>
+        
+        </div>
+   </nav> 
+
+   <div class="main">   
+    <div class="form__container">      
+        <div class="row">
+            <div class="col-md-4 order-md-2 mb-4" id="cartdata">
+                <h4 class="d-flex justify-content-between align-items-center mb-3">
+                    <span class="mb-3">Your cart</span>
+                    <span class="badge badge-secondary badge-pill" id="totalincart"></span>
+                </h4> 
+                <div class="list-group mb-3">
+                    <div class="list-group-item d-flex justify-content-between">
+                        <div class="column1">Goblin</div>
+                        <div class="column3">Qty</div>
+                        <div class="column2">Price</div>
+                    </div>
+                    <div class="list-group-item" id="tobuy">
+                        <!-- render cart items here -->
+                    </div>
+                    <div class="list-group-item d-flex justify-content-between">
+                        <span>Total (USD)</span>
+                        <strong id="subtotal"></strong>
+                    </div>               
+                </div>
+
+            </div>
+
+            <div class="col-md-8 order-md-1">
+                <h4 class="mb-3">Billing address</h4>
+                <form class="needs-validation" novalidate>
+                    <div class="row">
+                        
+                        <div class="col-md-6 mb-3">
+                            <label for="firstName">First name</label>
+                            <input type="text" class="form-control" id="firstName" placeholder="" value="" required>
+                            <div class="invalid-feedback"> <!--VALIDATE-->
+                                Valid first name is required.
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+                            <label for="lastName">Last name</label>
+                            <input type="text" class="form-control" id="lastName" placeholder="" value="" required>
+                            <div class="invalid-feedback"> <!--VALIDATE-->
+                                Valid last name is required.
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="EmailAddressInput" class="form-label">Email address</label>
+
+                        <input type="email" class="form-control" id="EmailAddressInput" placeholder="name@example.com" required />
+                        
+                        <div class="invalid-feedback"> <!--VALIDATE-->
+                            Incorrect email address
+                        </div>
+                    </div>
+                           
+                    <div class="mb-3">
+                        <label for="address">Address</label>
+                        <input type="text" class="form-control" id="address" placeholder="1234 Main St" required>
+                            <div class="invalid-feedback"> <!--VALIDATE-->
+                                Please enter your shipping address.
+                            </div>
+                    </div>
+                  
+                    <div class="row">
+                        <div class="col-md-5 mb-3">
+                        <label for="country">Country</label>
+                        <select class="custom-select d-block w-100" id="country" required>
+                            <option value="">Choose...</option>
+                            <option>United Kingdom</option>
+                        </select>
+                        <div class="invalid-feedback"> <!--VALIDATE-->
+                            Please select a valid country.
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-4 mb-3">
+                        <label for="state">County</label>
+                        <select class="custom-select d-block w-100" id="state" required>
+                            <option value="">Choose...</option>
+                            <option>London</option>
+                            <option>East Sussex</option>
+                        </select>
+                        <div class="invalid-feedback"> <!--VALIDATE-->
+                            Please provide a valid county.
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-3 mb-3">
+                        <label for="zip">Postcode</label>
+                        <input type="text" class="form-control" id="zip" placeholder="" required>
+                        <div class="invalid-feedback"> <!--VALIDATE-->
+                            Postcode required.
+                        </div>
+                    </div>
+
+
+                    <h4 class="mb-3">Payment</h4>
+
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="cc-name">Name on card</label>
+                            <input type="text" class="form-control" id="cc-name" placeholder="" required>
+                            <small class="mb-3">Full name as displayed on card</small>
+                            <div class="invalid-feedback"> <!--VALIDATE-->
+                                Name on card is required
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="cc-number">card number</label>
+                            <input type="number" class="form-control" id="cc-number" min="2000000000000000" max="5999999999999999" placeholder="" required>
+                            <div class="invalid-feedback">
+                                Please enter a 16 digit card number
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-3 mb-3">
+                            <label for="cc-expiration">Expiration</label>
+                            <input type="month" class="form-control" id="cc-expiration" placeholder="" required>
+                            <div class="invalid-feedback">
+                                Expiration date required
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <label for="cc-cvv">CVV</label>
+                            <input type="number" class="form-control" id="cc-cvv" max="9999" placeholder="" required>
+                            <div class="invalid-feedback">
+                                Please enter 3 or 4 digit code on back of card
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12">
+                        <button class="btn btn-danger" id="todatabase" type="submit">Place Order</button>
+                    </div>
+
+
+
+
+                    
+                </form>
+            </div>
+        </div>          
+    </div>            
+</div>
+
+<!-- Optional JavaScript -->
+<!-- Popper.js first, then Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
+
+
+
+    <div class="footer__container">
+        <div class="footer__links">
+            <div class="footer__link__wrapper">
+                <div class="footer__link__items">
+                    <h2>Info</h2>
+                    <a href="/pages/about.html">Origins</a>
+                    <a href="/pages/about.html">Buying Goblins Online</a>
+                    <a href="https://uk.trustpilot.com/review/goblingaming.co.uk">Testimonials</a>
+                </div>
+                <div class="footer__link__items">
+                    <h2>Products</h2>
+                    <a href="/pages/storepage.html">Gold Class</a>
+                    <a href="/pages/storepage.html">Silver Class</a>
+                    <a href="/pages/storepage.html">Bronze Class</a>
+                    <a href="/pages/new_products.html">New Products</a>
+                </div>
+            </div>
+            <div class="footer__link__wrapper">
+                <div class="footer__link__items">
+                    <h2>Contact Us</h2>
+                    <a href="/pages/locations.html">Locations</a>
+                    <a href="/pages/locations.html">Phone</a>
+                    <a href="/pages/locations.html">Web</a>
+                    <a href="/pages/locations.html">Email</a>
+                </div>
+                <div class="footer__link__items">
+                    <h2>Games</h2>
+                    <a href="/pages/new_products.html">Game 1</a>
+                    <a href="/pages/new_products.html">Game 2</a>
+                    <a href="/pages/new_products.html">Game 3</a>
+                    <a href="/pages/new_products.html">Game 4</a>
+                </div>
+            </div>
+        </div>
+        <div class="social__media">
+            <div class="social__media__wrap">
+                <div class="footer__logo">
+                    <a href="/pages/index.html" id="footer__logo"><i class="fa-solid fa-viruses"></i>Goblinstore</a>
+                </div>
+                <p class="website__rights">© Michael Greatorex 2023. All rights reserved</p>
+                <div class="social__icons">
+                    <a href="https://en-gb.facebook.com/Goblinonlinestore/videos/?ref=page_internal" class="social__icon__link" target="_blank">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="https://www.instagram.com/gooblin_store/" class="social__icon__link" target="_blank">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://twitter.com/goblin91457060" class="social__icon__link" target="_blank">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/company/goblincompute" class="social__icon__link" target="_blank">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://www.youtube.com/@GoblinStore" class="social__icon__link" target="_blank">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+   </div>
+
+
+
+
+   <script src="/scripts/app.js"></script>
+   <script src="/scripts/products.js"></script>
+   <script src="/scripts/checkoutdata.js"></script>
+   <script src="/scripts/modal.js"></script>
+   <script src="/scripts/emailer.js"></script>
+
+
+
+   
+   <script type="module">
+
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js";
+        import { getDatabase, ref, set, get, child } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-database.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyBRjMtZrwkShC3GiKl1j0cHAvGY4Xs1XnI",
+            authDomain: "goblinstore-2ed8b.firebaseapp.com",
+            databaseURL: "https://goblinstore-2ed8b-default-rtdb.europe-west1.firebasedatabase.app",
+            projectId: "goblinstore-2ed8b",
+            storageBucket: "goblinstore-2ed8b.appspot.com",
+            messagingSenderId: "950185410267",
+            appId: "1:950185410267:web:c60e0e367668a52a5e56fe",
+            measurementId: "G-WFTDFSYWBX"
+        };
+    
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+    
+        //get ref to database services
+        const db = getDatabase(app);
+
+        var forms = document.querySelectorAll('.needs-validation');
+    
+        Array.prototype.slice.call( forms ).forEach( function( form )
+        {
+            
+            form.addEventListener( 'submit', function ( event )
+            {
+                if ( !form.checkValidity( ) )
+                {
+                    event.preventDefault( )
+                    event.stopPropagation( );
+                }
+
+                todatabase.addEventListener('click', function(e){
+
+                    e.preventDefault();
+                    
+                    set(ref(db, 'Orders/' + document.getElementById("lastName").value),
+                    {
+
+                        first_name: document.getElementById("firstName").value,
+                        last_name: document.getElementById("lastName").value,
+                        email: document.getElementById("EmailAddressInput").value,
+                        address: document.getElementById("address").value,
+                        country: document.getElementById("country").value,
+                        county: document.getElementById("state").value,
+                        postcode: document.getElementById("zip").value,
+                        name_on_card: document.getElementById("cc-name").value,
+                        card_number: document.getElementById("cc-number").value,
+                        expiration: document.getElementById("cc-expiration").value,
+                        cvv: document.getElementById("cc-cvv").value,
+                        items_purchased: JSON.parse(localStorage.getItem("CART"))
+
+                    });
+                    
+                    alert("Order recieved!");
+
+                })
+
+                form.classList.add( 'was-validated' );
+
+
+
+            }, false );
+        
+
+        } ); 
+
+
+</script>
+
+
+
+
+
+
+
+
+</body>
+</html>

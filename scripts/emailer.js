@@ -54,7 +54,7 @@ var forms = document.querySelectorAll('.needs-validation');
                 
                 Email.send({
                     SecureToken : "8369981c-6420-4e59-b065-63fc08fcec14",
-                    To : 'vzmgreatorex@gmail.com',
+                    To : emailaddressinput.value,
                     From : "goblinstore@gmx.com",
                     Subject : "Order Recieved!",
                     Body : email

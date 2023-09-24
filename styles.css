@@ -337,7 +337,7 @@ h1 {
 .map__img__container {
     width: 35rem;
     height: 24.5rem;
-    background-image: url(/images/map.jpg);
+    background-image: url(map.jpg);
     background-size: contain;
 }
 

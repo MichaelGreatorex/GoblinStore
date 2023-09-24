@@ -249,7 +249,7 @@ a {
 /* MAIN PAGE SECITON */
 
 .main {
-    background-image: url('/images/background.jpg');
+    background-image: url('background.jpg');
     background-repeat: no-repeat;
     background-attachment: fixed;
     padding: 3rem 0;
@@ -518,14 +518,14 @@ h1 {
     height: 525px;
     width: 400px;
     border-radius: 4px;
-    background-image: url('/images/goldcard.jpg');
+    background-image: url('goldcard.jpg');
     background-size: cover;
     position: relative;
     color: black;
 }
 
 .services__card:nth-child(2) {
-    background-image: url('/images/silvercard.jpg');
+    background-image: url('silvercard.jpg');
 }
 
 .services h2 {
@@ -550,7 +550,7 @@ h1 {
     color: black;
     border: none;
     outline: none;
-    background-image: url('/images/gold.png');
+    background-image: url('gold.png');
     background-size:cover;
     position: absolute;
     bottom: 4rem;
@@ -567,7 +567,7 @@ h1 {
     color: black;
     border: none;
     outline: none;
-    background-image: url('/images/silver.png');
+    background-image: url('silver.png');
     background-size:cover;
     position: absolute;
     bottom: 4rem;

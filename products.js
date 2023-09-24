@@ -6,7 +6,7 @@ const products = [
     instock: 100,
     description:
       "GOLD",
-    imgSrc: "/images/Gold1.png",
+    imgSrc: "Gold1.png",
   },
   {
     id: 1,
@@ -15,7 +15,7 @@ const products = [
     instock: 43,
     description:
       "GOLD",
-    imgSrc: "/images/Gold2.png",
+    imgSrc: "Gold2.png",
   },
   {
     id: 2,
@@ -24,7 +24,7 @@ const products = [
     instock: 10,
     description:
       "GOLD",
-    imgSrc: "/images/Gold3.png",
+    imgSrc: "Gold3.png",
   },
   {
     id: 3,
@@ -33,7 +33,7 @@ const products = [
     instock: 5,
     description:
       "SILVER",
-    imgSrc: "/images/Silver1.png",
+    imgSrc: "Silver1.png",
   },
   {
     id: 4,
@@ -42,7 +42,7 @@ const products = [
     instock: 4,
     description:
       "SILVER",
-    imgSrc: "/images/Silver2.png",
+    imgSrc: "Silver2.png",
   },
   {
     id: 5,
@@ -51,7 +51,7 @@ const products = [
     instock: 40,
     description:
       "SILVER",
-    imgSrc: "/images/Silver3.png",
+    imgSrc: "Silver3.png",
   },
 
   {
@@ -61,7 +61,7 @@ const products = [
   instock: 26,
   description:
       "BRONZE",
-  imgSrc: "/images/Bronze1.png",
+  imgSrc: "Bronze1.png",
   },
 
   {
@@ -71,7 +71,7 @@ const products = [
   instock: 12,
   description:
       "BRONZE",
-  imgSrc: "/images/Bronze2.png",
+  imgSrc: "Bronze2.png",
   },
 
   {
@@ -81,6 +81,6 @@ const products = [
   instock: 49,
   description:
       "BRONZE",
-  imgSrc: "/images/Bronze3.png",
+  imgSrc: "Bronze3.png",
   },
 ];

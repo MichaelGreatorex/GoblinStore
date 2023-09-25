@@ -11,8 +11,7 @@
 
     <title>Checkout</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" 
-                integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="shopping.css">
 
@@ -55,162 +54,150 @@
    </nav> 
 
    <div class="main">   
-    <div class="form__container">      
-        <div class="row">
-            <div class="col-md-4 order-md-2 mb-4" id="cartdata">
-                <h4 class="d-flex justify-content-between align-items-center mb-3">
-                    <span class="mb-3">Your cart</span>
-                    <span class="badge badge-secondary badge-pill" id="totalincart"></span>
-                </h4> 
-                <div class="list-group mb-3">
-                    <div class="list-group-item d-flex justify-content-between">
-                        <div class="column1">Goblin</div>
-                        <div class="column3">Qty</div>
-                        <div class="column2">Price</div>
+        <div class="form__container">      
+            <div class="row">
+                <div class="col-md-4 order-md-2 mb-4" id="cartdata">
+                    <h4 class="d-flex justify-content-between align-items-center mb-3">
+                        <span class="mb-3">Your cart</span>
+                        <span class="badge badge-secondary badge-pill" id="totalincart"></span>
+                    </h4> 
+                    <div class="list-group mb-3">
+                        <div class="list-group-item d-flex justify-content-between">
+                            <div class="column1">Goblin</div>
+                            <div class="column3">Qty</div>
+                            <div class="column2">Price</div>
+                        </div>
+                        <div class="list-group-item" id="tobuy">
+                            <!-- render cart items here -->
+                        </div>
+                        <div class="list-group-item d-flex justify-content-between">
+                            <span>Total (USD)</span>
+                            <strong id="subtotal"></strong>
+                        </div>               
                     </div>
-                    <div class="list-group-item" id="tobuy">
-                        <!-- render cart items here -->
-                    </div>
-                    <div class="list-group-item d-flex justify-content-between">
-                        <span>Total (USD)</span>
-                        <strong id="subtotal"></strong>
-                    </div>               
+
                 </div>
 
-            </div>
+                <div class="col-md-8 order-md-1">
+                    <h4 class="mb-3">Billing address</h4>
+                    <form class="needs-validation" novalidate>
+                        <div class="row">
+                            
+                            <div class="col-md-6 mb-3">
+                                <label for="firstName">First name</label>
+                                <input type="text" class="form-control" id="firstName" placeholder="" value="" required>
+                                <div class="invalid-feedback"> <!--VALIDATE-->
+                                    Valid first name is required.
+                                </div>
+                            </div>
 
-            <div class="col-md-8 order-md-1">
-                <h4 class="mb-3">Billing address</h4>
-                <form class="needs-validation" novalidate>
-                    <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="lastName">Last name</label>
+                                <input type="text" class="form-control" id="lastName" placeholder="" value="" required>
+                                <div class="invalid-feedback"> <!--VALIDATE-->
+                                    Valid last name is required.
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="EmailAddressInput" class="form-label">Email address</label>
+
+                            <input type="email" class="form-control" id="EmailAddressInput" placeholder="name@example.com" required />
+                            
+                            <div class="invalid-feedback"> <!--VALIDATE-->
+                                Incorrect email address
+                            </div>
+                        </div>
+                            
+                        <div class="mb-3">
+                            <label for="address">Address</label>
+                            <input type="text" class="form-control" id="address" placeholder="1234 Main St" required>
+                                <div class="invalid-feedback"> <!--VALIDATE-->
+                                    Please enter your shipping address.
+                                </div>
+                        </div>
+                    
+                        <div class="row">
+                            <div class="col-md-5 mb-3">
+                            <label for="country">Country</label>
+                            <select class="custom-select d-block w-100" id="country" required>
+                                <option value="">Choose...</option>
+                                <option>United Kingdom</option>
+                            </select>
+                            <div class="invalid-feedback"> <!--VALIDATE-->
+                                Please select a valid country.
+                            </div>
+                        </div>
                         
-                        <div class="col-md-6 mb-3">
-                            <label for="firstName">First name</label>
-                            <input type="text" class="form-control" id="firstName" placeholder="" value="" required>
+                        <div class="col-md-4 mb-3">
+                            <label for="state">County</label>
+                            <select class="custom-select d-block w-100" id="state" required>
+                                <option value="">Choose...</option>
+                                <option>London</option>
+                                <option>East Sussex</option>
+                            </select>
                             <div class="invalid-feedback"> <!--VALIDATE-->
-                                Valid first name is required.
+                                Please provide a valid county.
                             </div>
                         </div>
-
-                        <div class="col-md-6 mb-3">
-                            <label for="lastName">Last name</label>
-                            <input type="text" class="form-control" id="lastName" placeholder="" value="" required>
-                            <div class="invalid-feedback"> <!--VALIDATE-->
-                                Valid last name is required.
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <div class="mb-3">
-                        <label for="EmailAddressInput" class="form-label">Email address</label>
-
-                        <input type="email" class="form-control" id="EmailAddressInput" placeholder="name@example.com" required />
                         
-                        <div class="invalid-feedback"> <!--VALIDATE-->
-                            Incorrect email address
-                        </div>
-                    </div>
-                           
-                    <div class="mb-3">
-                        <label for="address">Address</label>
-                        <input type="text" class="form-control" id="address" placeholder="1234 Main St" required>
-                            <div class="invalid-feedback"> <!--VALIDATE-->
-                                Please enter your shipping address.
-                            </div>
-                    </div>
-                  
-                    <div class="row">
-                        <div class="col-md-5 mb-3">
-                        <label for="country">Country</label>
-                        <select class="custom-select d-block w-100" id="country" required>
-                            <option value="">Choose...</option>
-                            <option>United Kingdom</option>
-                        </select>
-                        <div class="invalid-feedback"> <!--VALIDATE-->
-                            Please select a valid country.
-                        </div>
-                    </div>
-                    
-                    <div class="col-md-4 mb-3">
-                        <label for="state">County</label>
-                        <select class="custom-select d-block w-100" id="state" required>
-                            <option value="">Choose...</option>
-                            <option>London</option>
-                            <option>East Sussex</option>
-                        </select>
-                        <div class="invalid-feedback"> <!--VALIDATE-->
-                            Please provide a valid county.
-                        </div>
-                    </div>
-                    
-                    <div class="col-md-3 mb-3">
-                        <label for="zip">Postcode</label>
-                        <input type="text" class="form-control" id="zip" placeholder="" required>
-                        <div class="invalid-feedback"> <!--VALIDATE-->
-                            Postcode required.
-                        </div>
-                    </div>
-
-
-                    <h4 class="mb-3">Payment</h4>
-
-                    <div class="row">
-                        <div class="col-md-6 mb-3">
-                            <label for="cc-name">Name on card</label>
-                            <input type="text" class="form-control" id="cc-name" placeholder="" required>
-                            <small class="mb-3">Full name as displayed on card</small>
-                            <div class="invalid-feedback"> <!--VALIDATE-->
-                                Name on card is required
-                            </div>
-                        </div>
-                        <div class="col-md-6 mb-3">
-                            <label for="cc-number">card number</label>
-                            <input type="number" class="form-control" id="cc-number" min="2000000000000000" max="5999999999999999" placeholder="" required>
-                            <div class="invalid-feedback">
-                                Please enter a 16 digit card number
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row">
                         <div class="col-md-3 mb-3">
-                            <label for="cc-expiration">Expiration</label>
-                            <input type="month" class="form-control" id="cc-expiration" placeholder="" required>
-                            <div class="invalid-feedback">
-                                Expiration date required
+                            <label for="zip">Postcode</label>
+                            <input type="text" class="form-control" id="zip" placeholder="" required>
+                            <div class="invalid-feedback"> <!--VALIDATE-->
+                                Postcode required.
                             </div>
                         </div>
-                        <div class="col-md-3 mb-3">
-                            <label for="cc-cvv">CVV</label>
-                            <input type="number" class="form-control" id="cc-cvv" max="9999" placeholder="" required>
-                            <div class="invalid-feedback">
-                                Please enter 3 or 4 digit code on back of card
+
+
+                        <h4 class="mb-3">Payment</h4>
+
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="cc-name">Name on card</label>
+                                <input type="text" class="form-control" id="cc-name" placeholder="" required>
+                                <small class="mb-3">Full name as displayed on card</small>
+                                <div class="invalid-feedback"> <!--VALIDATE-->
+                                    Name on card is required
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="cc-number">card number</label>
+                                <input type="number" class="form-control" id="cc-number" min="2000000000000000" max="5999999999999999" placeholder="" required>
+                                <div class="invalid-feedback">
+                                    Please enter a 16 digit card number
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <div class="col-12">
-                        <button class="btn btn-danger" id="todatabase" type="submit">Place Order</button>
-                    </div>
+                        <div class="row">
+                            <div class="col-md-3 mb-3">
+                                <label for="cc-expiration">Expiration</label>
+                                <input type="month" class="form-control" id="cc-expiration" placeholder="" required>
+                                <div class="invalid-feedback">
+                                    Expiration date required
+                                </div>
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <label for="cc-cvv">CVV</label>
+                                <input type="number" class="form-control" id="cc-cvv" max="9999" placeholder="" required>
+                                <div class="invalid-feedback">
+                                    Please enter 3 or 4 digit code on back of card
+                                </div>
+                            </div>
+                        </div>
 
-
-
-
-                    
-                </form>
+                        <div class="col-12">
+                            <button class="btn btn-danger" id="todatabase" type="submit">Place Order</button>
+                        </div>                        
+                    </form>
+                </div>
             </div>
         </div>          
-    </div>            
-</div>
-
-<!-- Optional JavaScript -->
-<!-- Popper.js first, then Bootstrap JS -->
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
-
-
-
+    </div>
+    
     <div class="footer__container">
         <div class="footer__links">
             <div class="footer__link__wrapper">
@@ -219,6 +206,7 @@
                     <a href="about.html">Origins</a>
                     <a href="about.html">Buying Goblins Online</a>
                     <a href="https://uk.trustpilot.com/review/goblingaming.co.uk">Testimonials</a>
+                    <a>&nbsp</a>
                 </div>
                 <div class="footer__link__items">
                     <h2>Products</h2>
@@ -271,6 +259,16 @@
             </div>
         </div>
    </div>
+
+
+    <!-- Optional JavaScript -->
+    <!-- Popper.js first, then Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
+
+
+
+
 
 
 
